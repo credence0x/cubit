@@ -525,7 +525,7 @@ impl PackFixed of StorePacking<Fixed, felt252> {
             value.into(), u256_as_non_zero(0x100000000000000000000000000000000)
         );
         let mag: u128 = r.try_into().unwrap();
-        let sign: bool = q.into() == 1;
+        let sign: bool = q.try_into().unwrap() == 1;
         Fixed { mag: mag, sign: sign }
     }
 }
